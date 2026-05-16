@@ -1,0 +1,29 @@
+:root {
+  --bg-base: #000000;
+  --bg-highlight: #121212;
+  --bg-elevated: #181818;
+  --text-base: #ffffff;
+  --text-subdued: #b3b3b3;
+  --accent: #cd1212;
+  /* A nice vibrant green */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
