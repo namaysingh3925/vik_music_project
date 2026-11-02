@@ -1,18 +1,38 @@
-# React + Vite
+# HMusic: Development Version
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The working development copy of **HMusic**, a full-stack music streaming and discovery app built with React, Node.js, Express and MongoDB.
 
-Currently, two official plugins are available:
+> 📖 Full documentation (features, architecture and API reference) lives in the main repository: **[music_project](https://github.com/namaysingh3925/music_project)**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Search tracks and artists, with artist pages showing top tracks
+- Audio previews in a persistent player
+- Sign up and log in with hashed passwords and JWT
+- Liked songs, favourite artists and custom playlists
+- Optional Spotify sign-in (OAuth PKCE)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Tech stack
 
-Note: This will impact Vite dev & build performances.
+| Frontend | Backend |
+|---|---|
+| React 19, Vite, React Router 7 | Node.js, Express |
+| Context API for player / auth state | MongoDB with Mongoose |
+| Plain CSS (dark theme) | JWT auth middleware |
 
-## Expanding the ESLint configuration
+## Run it locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# 1. Backend
+cd backend
+cp .env.example .env      # then fill in JWT_SECRET (any long random string)
+npm install
+npm start
+
+# 2. Frontend (in a new terminal, from the project root)
+cp .env.example .env      # add your Spotify client ID if you use Spotify login
+npm install
+npm run dev
+```
+
+MongoDB needs to be running locally (`mongodb://127.0.0.1:27017`), or put a MongoDB Atlas connection string in `MONGO_URI`.
